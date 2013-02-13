@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLConfigurationEditor", "X
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLConfigurationLib", "XMLConfigurationLib\XMLConfigurationLib.csproj", "{475DC0D1-29E2-4CBB-9E38-9554D24D67EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit Tests", "NUnit Tests\NUnit Tests.csproj", "{479E0910-B125-48F2-96ED-5F3D69CC6B06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{475DC0D1-29E2-4CBB-9E38-9554D24D67EC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{475DC0D1-29E2-4CBB-9E38-9554D24D67EC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{475DC0D1-29E2-4CBB-9E38-9554D24D67EC}.Release|x86.ActiveCfg = Release|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{479E0910-B125-48F2-96ED-5F3D69CC6B06}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

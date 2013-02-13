@@ -205,7 +205,19 @@ namespace XMLConfigurationLib
             {
                 XmlDocument document = new XmlDocument();
                 document.LoadXml(xmlContents);
-                document.Save(filePath);
+
+                if (bDoValidation && mbSchemaIsLoaded)
+                {
+                    document.Schemas.Add(mSchema);
+                    document.Validate(ValidationCallback, document);
+                    document.Save(filePath);
+                }
+                else
+                {
+                    document.Save(filePath);
+                }
+
+
             }
             catch (System.Exception ex)
             {
