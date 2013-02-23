@@ -8,6 +8,7 @@ using System.IO;
 
 namespace NUnit_Tests
 {
+
     public class cExceptionThrower
     {
         public void ThrowAE()
@@ -125,10 +126,10 @@ namespace NUnit_Tests
             cXMLHandler handler = new cXMLHandler();
             string schema = handler.LoadSchemaFromFile(XsdFileName);
             handler.SaveStringAsXMLFile(XmlFileNameBadValidation, XmlDocBad);
-            //if (File.Exists(XmlFileNameBadValidation))
-            //{
-            //    File.Delete(XmlFileNameBadValidation);
-            //}
+            if (File.Exists(XmlFileNameBadValidation))
+            {
+                File.Delete(XmlFileNameBadValidation);
+            }
         }
     }
 }

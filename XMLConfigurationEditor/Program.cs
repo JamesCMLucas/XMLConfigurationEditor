@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace XMLConfigurationEditor
 {
+    /// <summary>
+    /// Main Program
+    /// </summary>
     static class Program
     {
         /// <summary>

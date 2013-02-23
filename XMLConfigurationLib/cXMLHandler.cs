@@ -6,15 +6,21 @@ using System.Xml;
 using System.Xml.Schema;
 using System.IO;
 
+
 namespace XMLConfigurationLib
 {
+
+
     /// <summary>
-    /// Loads and saves xml and xsd files
+    /// A handy tool to edit xml files and schemas with validation options
     /// </summary>
     public class cXMLHandler
     {
         private XmlSchema mSchema;
         private bool mbSchemaIsLoaded;
+        /// <summary>
+        /// The warnings list generated from the last validation
+        /// </summary>
         public List<string> mWarningsList;
 
         /// <summary>
@@ -27,17 +33,18 @@ namespace XMLConfigurationLib
             mbSchemaIsLoaded = false;
         }
 
+
         /// <summary>
-        /// Loads a schema from a file
-        /// Use this schema in all future xml loading / saving for validation
-        /// 
-        /// Throws exceptions for:
-        ///                           Bad file extension
-        ///                           File doesn't exist
-        ///                           Loading error
+        /// Loads the schema from file.
         /// </summary>
-        /// <param name="filePath">file name of the schema to load</param>
-        /// <returns>The xsd file contents as a string</returns>
+        /// <param name="filePath">The file path.</param>
+        /// <returns>The xsd file as a formatted string</returns>
+        /// <exception cref="System.Exception">
+        /// Bad File Extension
+        /// or
+        /// File Doesn't Exist
+        /// or
+        /// </exception>
         public string LoadSchemaFromFile(string filePath)
         {
             mWarningsList.Clear();
@@ -82,6 +89,11 @@ namespace XMLConfigurationLib
             return xsdContents;
         }
 
+        /// <summary>
+        /// Validation callback for xml and xsd file loading and saving
+        /// </summary>
+        /// <param name="sender">The sender.</param>
+        /// <param name="args">The <see cref="ValidationEventArgs"/> instance containing the event data.</param>
         private void ValidationCallback(object sender, ValidationEventArgs args)
         {
 
@@ -95,18 +107,20 @@ namespace XMLConfigurationLib
             }
         }
 
+
         /// <summary>
-        /// Get the list of warnings generated from the last load or save
+        /// Gets the warnings generated from the most recent load or save.
         /// </summary>
-        /// <returns>list of strings</returns>
+        /// <returns>A list of strings</returns>
         public List<string> GetWarnings()
         {
             return mWarningsList;
         }
 
+
         /// <summary>
-        /// Forgets the last loaded schema
-        /// No more validation on xml loading / saving
+        /// Forgets the schema.
+        /// No more validation checks are possible
         /// </summary>
         public void ForgetSchema()
         {
@@ -114,15 +128,19 @@ namespace XMLConfigurationLib
             mbSchemaIsLoaded = false;
         }
 
+
         /// <summary>
-        /// Loads an xml file
-        /// Throws exceptions for:
-        ///                           Bad file extension
-        ///                           File doesn't exist
-        ///                           Loading error
+        /// Loads the XML file to string.
         /// </summary>
-        /// <param name="filePath">Path to the xml document</param>
-        /// <returns>The xml file contents as a string</returns>
+        /// <param name="filePath">The file path.</param>
+        /// <param name="bDoValidation">if set to <c>true</c> [do validation].</param>
+        /// <returns>The xml file as a formatted string</returns>
+        /// <exception cref="System.Exception">
+        /// Bad File Extension
+        /// or
+        /// File Doesn't Exist
+        /// or
+        /// </exception>
         public string LoadXMLFileToString(string filePath, bool bDoValidation = true)
         {
             mWarningsList.Clear();
@@ -191,13 +209,14 @@ namespace XMLConfigurationLib
             return xmlContents;
         }
 
+
         /// <summary>
-        /// Saves a given string to file as xml
-        /// Throws exceptions for:
-        ///                           Saving error
+        /// Saves the string as XML file.
         /// </summary>
-        /// <param name="filePath">File name to save as</param>
-        /// <param name="xmlContents">Xml Contents - full file as a string</param>
+        /// <param name="filePath">The file path.</param>
+        /// <param name="xmlContents">The XML contents.</param>
+        /// <param name="bDoValidation">if set to <c>true</c> [b do validation].</param>
+        /// <exception cref="System.Exception">Some issue with saving the file</exception>
         public void SaveStringAsXMLFile(string filePath, string xmlContents, bool bDoValidation = true)
         {
             mWarningsList.Clear();

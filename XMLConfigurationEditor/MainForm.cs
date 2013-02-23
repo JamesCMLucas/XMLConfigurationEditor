@@ -10,6 +10,9 @@ using XMLConfigurationLib;
 
 namespace XMLConfigurationEditor
 {
+    /// <summary>
+    /// Main Form
+    /// </summary>
     public partial class MainForm : Form
     {
         /// <summary>
